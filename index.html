@@ -38,7 +38,8 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    padding: 60px 6vw;
+    column-gap: 20px;
+    padding: 60px 12vw;
     position: relative;
     overflow: hidden;
   }
@@ -343,7 +344,7 @@
   /* CHAPTERS GRID */
   .chapters-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2px;
     background: var(--pink-soft);
     border: 2px solid var(--pink-soft);
@@ -616,6 +617,10 @@
 
   /* RESPONSIVE */
   @media (max-width: 768px) {
+    .chapters-grid {
+      grid-template-columns: 1fr;
+    }
+
     .hero {
       grid-template-columns: 1fr;
       padding: 60px 5vw 50px;
@@ -722,105 +727,6 @@
       <h3 class="chapter-title">Costos, precios y primeras ventas</h3>
       <p class="chapter-desc">Cómo calcular tus costos, fijar precios justos y conseguir tus primeras ventas. Estrategias de marketing sin gastar en publicidad.</p>
     </div>
-  </div>
-</section>
-
-<!-- FOR WHO -->
-<section class="for-who">
-  <span class="section-label">¿Es para mí?</span>
-  <h2 class="section-title">Esta guía es para <em>vos</em> si…</h2>
-  <p class="section-desc">No importa dónde estés parada hoy.</p>
-
-  <div class="who-grid">
-    <div class="who-card">
-      <div class="who-icon">🌱</div>
-      <h3 class="who-title">Querés empezar desde cero</h3>
-      <p class="who-desc">Nunca hiciste una vela y no sabés por dónde arrancar. Esta guía te lleva de la mano desde el primer minuto.</p>
-    </div>
-    <div class="who-card">
-      <div class="who-icon">🏠</div>
-      <h3 class="who-title">Buscás un ingreso extra desde casa</h3>
-      <p class="who-desc">Sin jefes, sin horarios fijos, trabajando en tus propios tiempos con una inversión inicial mínima.</p>
-    </div>
-    <div class="who-card">
-      <div class="who-icon">🎁</div>
-      <h3 class="who-title">Querés hacer regalos únicos</h3>
-      <p class="who-desc">Aprendé a crear productos que la gente ama y que no van a encontrar en ninguna tienda del mundo.</p>
-    </div>
-    <div class="who-card">
-      <div class="who-icon">✨</div>
-      <h3 class="who-title">Ya hacés velas y querés vender</h3>
-      <p class="who-desc">Tenés el producto pero no sabés cómo monetizarlo. El capítulo 6 es exactamente lo que necesitás.</p>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="section testimonials">
-  <span class="section-label">Lo que dicen</span>
-  <h2 class="section-title">Resultados <em>reales</em></h2>
-  <p class="section-desc">Personas que dieron el primer paso con esta guía.</p>
-
-  <div class="testi-grid">
-    <div class="testi-card">
-      <span class="testi-quote">"</span>
-      <p class="testi-text">En una semana hice mis primeras velas y las vendí a mis compañeras del trabajo. No podía creer que fuera tan simple.</p>
-      <div class="testi-author">
-        <div class="testi-avatar">MG</div>
-        <div>
-          <div class="testi-name">María G. — Buenos Aires</div>
-          <div class="testi-stars">★★★★★</div>
-        </div>
-      </div>
-    </div>
-    <div class="testi-card">
-      <span class="testi-quote">"</span>
-      <p class="testi-text">El capítulo de precios me abrió los ojos. Estaba regalando mi trabajo. Ahora cobro lo que vale y la gente igual compra.</p>
-      <div class="testi-author">
-        <div class="testi-avatar">VP</div>
-        <div>
-          <div class="testi-name">Valentina P. — Medellín</div>
-          <div class="testi-stars">★★★★★</div>
-        </div>
-      </div>
-    </div>
-    <div class="testi-card">
-      <span class="testi-quote">"</span>
-      <p class="testi-text">Clarísimo y muy completo. Fui directo al capítulo de marketing y en dos semanas ya tenía mi primer pedido por Instagram.</p>
-      <div class="testi-author">
-        <div class="testi-avatar">LC</div>
-        <div>
-          <div class="testi-name">Laura C. — Ciudad de México</div>
-          <div class="testi-stars">★★★★★</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA FINAL -->
-<section class="cta-section" id="comprar">
-  <span class="section-label">Empezá hoy</span>
-  <h2 class="section-title">Tu emprendimiento<br>empieza <em>aquí</em></h2>
-  <p class="section-desc">Todo lo que necesitás para crear tus primeras velas y empezar a venderlas, en una guía que podés leer esta noche.</p>
-
-  <div class="price-block">
-    <span class="price-label">Precio único · Acceso de por vida</span>
-    <div class="price-amount"><span class="price-currency">$</span>9,99 <span style="font-size:1.5rem">USD</span></div>
-    <p class="price-desc">Descarga inmediata en PDF · +50 páginas</p>
-
-    <div class="includes-list">
-      <div class="includes-item"><span class="check">✦</span> Guía completa paso a paso</div>
-      <div class="includes-item"><span class="check">✦</span> Recetas y proporciones exactas</div>
-      <div class="includes-item"><span class="check">✦</span> Checklist de materiales lista para usar</div>
-      <div class="includes-item"><span class="check">✦</span> Fórmulas para calcular precios</div>
-      <div class="includes-item"><span class="check">✦</span> Estrategias de venta sin publicidad paga</div>
-    </div>
-
-    <a href="#" class="btn-primary" style="width:100%; font-size:1.05rem;">
-      Quiero mi guía ahora &nbsp;→
-    </a>
-    <p class="guarantee">🔒 Pago seguro · Descarga instantánea</p>
   </div>
 </section>
 
@@ -1041,6 +947,109 @@
 
   buildCarousel();
 </script>
+
+<!-- FOR WHO -->
+<section class="for-who">
+  <span class="section-label">¿Es para mí?</span>
+  <h2 class="section-title">Esta guía es para <em>vos</em> si…</h2>
+  <p class="section-desc">No importa dónde estés parada hoy.</p>
+
+  <div class="who-grid">
+    <div class="who-card">
+      <div class="who-icon">🌱</div>
+      <h3 class="who-title">Querés empezar desde cero</h3>
+      <p class="who-desc">Nunca hiciste una vela y no sabés por dónde arrancar. Esta guía te lleva de la mano desde el primer minuto.</p>
+    </div>
+    <div class="who-card">
+      <div class="who-icon">🏠</div>
+      <h3 class="who-title">Buscás un ingreso extra desde casa</h3>
+      <p class="who-desc">Sin jefes, sin horarios fijos, trabajando en tus propios tiempos con una inversión inicial mínima.</p>
+    </div>
+    <div class="who-card">
+      <div class="who-icon">🎁</div>
+      <h3 class="who-title">Querés hacer regalos únicos</h3>
+      <p class="who-desc">Aprendé a crear productos que la gente ama y que no van a encontrar en ninguna tienda del mundo.</p>
+    </div>
+    <div class="who-card">
+      <div class="who-icon">✨</div>
+      <h3 class="who-title">Ya hacés velas y querés vender</h3>
+      <p class="who-desc">Tenés el producto pero no sabés cómo monetizarlo. El capítulo 6 es exactamente lo que necesitás.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section testimonials">
+  <span class="section-label">Lo que dicen</span>
+  <h2 class="section-title">Resultados <em>reales</em></h2>
+  <p class="section-desc">Personas que dieron el primer paso con esta guía.</p>
+
+  <div class="testi-grid">
+    <div class="testi-card">
+      <span class="testi-quote">"</span>
+      <p class="testi-text">En una semana hice mis primeras velas y las vendí a mis compañeras del trabajo. No podía creer que fuera tan simple.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">MG</div>
+        <div>
+          <div class="testi-name">María G. — Buenos Aires</div>
+          <div class="testi-stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <span class="testi-quote">"</span>
+      <p class="testi-text">El capítulo de precios me abrió los ojos. Estaba regalando mi trabajo. Ahora cobro lo que vale y la gente igual compra.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">VP</div>
+        <div>
+          <div class="testi-name">Valentina P. — Medellín</div>
+          <div class="testi-stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <span class="testi-quote">"</span>
+      <p class="testi-text">Clarísimo y muy completo. Fui directo al capítulo de marketing y en dos semanas ya tenía mi primer pedido por Instagram.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">LC</div>
+        <div>
+          <div class="testi-name">Laura C. — Ciudad de México</div>
+          <div class="testi-stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-section" id="comprar">
+  <span class="section-label">Empezá hoy</span>
+  <h2 class="section-title">Tu emprendimiento<br>empieza <em>aquí</em></h2>
+  <p class="section-desc">Todo lo que necesitás para crear tus primeras velas y empezar a venderlas, en una guía que podés leer esta noche.</p>
+
+  <div class="price-block">
+    <span class="price-label" style="background:linear-gradient(135deg,var(--terracotta),#e08060); color:white; padding:5px 16px; border-radius:20px; letter-spacing:2px; margin-bottom:16px;">✦ OFERTA DE LANZAMIENTO ✦</span>
+    <div style="display:flex; align-items:center; gap:14px; margin-top:8px;">
+      <span style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; color:var(--text-light); text-decoration:line-through; opacity:0.6;">$29,99</span>
+      <div class="price-amount"><span class="price-currency">$</span>9,99 <span style="font-size:1.5rem">USD</span></div>
+    </div>
+    <p class="price-desc">Descarga inmediata en PDF · +50 páginas</p>
+
+    <div class="includes-list">
+      <div class="includes-item"><span class="check">✦</span> Guía completa paso a paso</div>
+      <div class="includes-item"><span class="check">✦</span> Recetas y proporciones exactas</div>
+      <div class="includes-item"><span class="check">✦</span> Checklist de materiales lista para usar</div>
+      <div class="includes-item"><span class="check">✦</span> Fórmulas para calcular precios</div>
+      <div class="includes-item"><span class="check">✦</span> Estrategias de venta sin publicidad paga</div>
+    </div>
+
+    <a href="#" class="btn-primary" style="width:100%; font-size:1.05rem;">
+      Quiero mi guía ahora &nbsp;→
+    </a>
+    <p class="guarantee">🔒 Pago seguro · Descarga instantánea</p>
+  </div>
+</section>
+
 
 <!-- GUARANTEE -->
 <section style="background: var(--warm-white); padding: 80px 6vw;">

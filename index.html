@@ -181,9 +181,9 @@
     background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
     color: var(--dark);
     font-family: 'DM Sans', sans-serif;
-    font-weight: 500;
-    font-size: 1rem;
-    padding: 18px 40px;
+    font-weight: 700;
+    font-size: 1.3rem;
+    padding: 22px 52px;
     border-radius: 4px;
     text-decoration: none;
     cursor: pointer;
@@ -671,6 +671,44 @@ src="https://www.facebook.com/tr?id=1316755053598827&ev=PageView&noscript=1"/>
 </head>
 <body>
 
+<!-- COUNTDOWN BAR -->
+<div id="countdown-bar" style="background:#2a1a0e; border-bottom:2px solid #c9973a; padding:10px 6vw; text-align:center; position:sticky; top:0; z-index:1000; display:flex; align-items:center; justify-content:center; gap:12px; flex-wrap:wrap;">
+  <span style="font-family:'DM Sans',sans-serif; font-size:0.85rem; color:rgba(253,246,238,0.85); letter-spacing:0.5px;">⏰ <strong style="color:#e8c97a;">¡Oferta de lanzamiento!</strong> Más del 50% OFF por tiempo limitado:</span>
+  <span id="countdown-timer" style="font-family:'Playfair Display',serif; font-size:1.2rem; font-weight:700; color:#f0a832; letter-spacing:2px; background:rgba(201,151,58,0.15); border:1px solid rgba(201,151,58,0.35); padding:2px 14px; border-radius:4px;">15:00</span>
+</div>
+
+<script>
+(function() {
+  var KEY = 'vla_countdown_start';
+  var DURATION = 15 * 60 * 1000; // 15 minutos en ms
+  var now = Date.now();
+  var start = parseInt(localStorage.getItem(KEY) || '0', 10);
+
+  if (!start || now - start >= DURATION) {
+    start = now;
+    localStorage.setItem(KEY, start);
+  }
+
+  function update() {
+    var elapsed = Date.now() - start;
+    var remaining = DURATION - elapsed;
+    if (remaining <= 0) {
+      start = Date.now();
+      localStorage.setItem(KEY, start);
+      remaining = DURATION;
+    }
+    var mins = Math.floor(remaining / 60000);
+    var secs = Math.floor((remaining % 60000) / 1000);
+    document.getElementById('countdown-timer').textContent =
+      (mins < 10 ? '0' : '') + mins + ':' + (secs < 10 ? '0' : '') + secs;
+  }
+
+  update();
+  setInterval(update, 1000);
+})();
+</script>
+
+
 <!-- HERO -->
 <section class="hero">
   <div class="particles">
@@ -685,21 +723,22 @@ src="https://www.facebook.com/tr?id=1316755053598827&ev=PageView&noscript=1"/>
   </div>
 
   <div class="hero-text">
-    <span class="hero-badge">✦ Ebook Digital</span>
+    <a href="https://pay.hotmart.com/U104748042Q" target="_blank" class="hero-badge" style="text-decoration:none; cursor:pointer;">✦ Ebook Digital</a>
     <h1 class="hero-title">El Arte de las<br><em>Velas Artesanales</em></h1>
     <p class="hero-subtitle">Guía práctica para crear y vender velas desde cero, sin experiencia previa</p>
 
     <div class="hero-features">
-      <div class="feature-item"><span class="feature-dot"></span> +50 páginas con todo lo que necesitas saber</div>
-      <div class="feature-item"><span class="feature-dot"></span> Recetas, técnicas y errores a evitar</div>
-      <div class="feature-item"><span class="feature-dot"></span> Cómo fijar precios y conseguir tus primeras ventas</div>
-      <div class="feature-item"><span class="feature-dot"></span> Descarga al instante, empieza hoy</div>
+      <div class="feature-item"><span class="feature-dot"></span> Haz tus primeras velas este fin de semana, sin experiencia previa</div>
+      <div class="feature-item"><span class="feature-dot"></span> Fija precios para ganar dinero desde la primera venta</div>
+      <div class="feature-item"><span class="feature-dot"></span> Evita los errores que arruinan la cera, el aroma y el acabado</div>
+      <div class="feature-item"><span class="feature-dot"></span> Consigue tus primeros clientes sin marca ni muchos seguidores</div>
     </div>
 
     <div class="hero-cta-group">
       <a href="https://pay.hotmart.com/U104748042Q" target="_blank" class="btn-primary">
-        Quiero mi guía ahora &nbsp;→
+        QUIERO MI GUÍA AHORA &nbsp;→
       </a>
+      <p style="font-family:'DM Sans',sans-serif; font-size:0.78rem; color:rgba(253,246,238,0.6); font-style:italic; margin-top:8px;">⚠️ Solo 12 cupos disponibles para el acceso de por vida</p>
       <span class="price-note">Descarga inmediata · Acceso de por vida · Garantía 7 días</span>
     </div>
   </div>
@@ -1127,9 +1166,10 @@ src="https://www.facebook.com/tr?id=1316755053598827&ev=PageView&noscript=1"/>
       <div class="includes-item"><span class="check">✦</span> Estrategias de venta sin publicidad paga</div>
     </div>
 
-    <a href="https://pay.hotmart.com/U104748042Q" target="_blank" class="btn-primary" style="width:100%; font-size:1.05rem;">
-      Quiero mi guía ahora &nbsp;→
+    <a href="https://pay.hotmart.com/U104748042Q" target="_blank" class="btn-primary" style="width:100%; font-size:1.3rem;">
+      QUIERO MI GUÍA AHORA &nbsp;→
     </a>
+    <p style="font-family:'DM Sans',sans-serif; font-size:0.82rem; color:var(--text-light); font-style:italic; margin-top:10px;">⚠️ Solo 12 cupos disponibles para el acceso de por vida</p>
     <p class="guarantee">🔒 Pago seguro · Descarga instantánea</p>
   </div>
 </section>

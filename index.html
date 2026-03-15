@@ -1355,5 +1355,60 @@ src="https://www.facebook.com/tr?id=1316755053598827&ev=PageView&noscript=1"/>
   </p>
 </footer>
 
+
+<!-- EXIT INTENT POPUP -->
+<div id="exit-popup" style="display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,0.7); align-items:center; justify-content:center; padding:20px;">
+  <div style="background:linear-gradient(160deg,#2a1a0e 0%,#5c3d2e 100%); border:2px solid rgba(201,151,58,0.5); border-radius:16px; padding:40px 36px; max-width:460px; width:100%; text-align:center; position:relative;">
+    <button onclick="closePopup()" style="position:absolute; top:14px; right:18px; background:none; border:none; color:rgba(253,246,238,0.5); font-size:1.4rem; cursor:pointer; line-height:1;">✕</button>
+    <p style="font-family:'DM Sans',sans-serif; font-size:0.75rem; letter-spacing:2.5px; text-transform:uppercase; color:#c9973a; margin:0 0 16px;">✦ Antes de que te vayas ✦</p>
+    <h2 style="font-family:'Playfair Display',serif; font-size:clamp(1.6rem,4vw,2rem); color:#fdf6ee; line-height:1.2; margin:0 0 12px;">¿Ya te vas?</h2>
+    <p style="font-family:'Cormorant Garamond',serif; font-size:1.05rem; font-style:italic; color:rgba(253,246,238,0.75); margin:0 0 24px; line-height:1.6;">Quedan pocas horas para acceder al precio de lanzamiento.</p>
+    <div style="text-align:left; margin:0 0 28px;">
+      <div style="display:flex; align-items:center; gap:10px; padding:6px 0; color:rgba(253,246,238,0.85); font-family:'DM Sans',sans-serif; font-size:0.9rem;"><span style="color:#c9973a;">✦</span> Más del 50% de descuento activo ahora</div>
+      <div style="display:flex; align-items:center; gap:10px; padding:6px 0; color:rgba(253,246,238,0.85); font-family:'DM Sans',sans-serif; font-size:0.9rem;"><span style="color:#c9973a;">✦</span> Solo 12 cupos disponibles</div>
+      <div style="display:flex; align-items:center; gap:10px; padding:6px 0; color:rgba(253,246,238,0.85); font-family:'DM Sans',sans-serif; font-size:0.9rem;"><span style="color:#c9973a;">✦</span> Garantía de 7 días — si no te convence, te devolvemos el dinero</div>
+    </div>
+    <a href="https://pay.hotmart.com/U104748042Q" target="_blank" onclick="closePopup()" style="display:inline-flex; align-items:center; justify-content:center; gap:10px; background:linear-gradient(135deg,#c9973a 0%,#e8c97a 100%); color:#2a1a0e; font-family:'DM Sans',sans-serif; font-weight:700; font-size:1.1rem; padding:18px 36px; border-radius:4px; text-decoration:none; width:100%; box-sizing:border-box; letter-spacing:0.5px;">QUIERO MI GUÍA AHORA &nbsp;→</a>
+    <p style="font-family:'DM Sans',sans-serif; font-size:0.75rem; color:rgba(253,246,238,0.4); margin:14px 0 0;">🔒 Pago seguro · Descarga instantánea</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var shown = false;
+
+  function showPopup(){
+    if(shown) return;
+    shown = true;
+    var p = document.getElementById('exit-popup');
+    p.style.display = 'flex';
+  }
+
+  function closePopup(){
+    document.getElementById('exit-popup').style.display = 'none';
+  }
+  window.closePopup = closePopup;
+
+  // Desktop: cursor sube hacia la barra del navegador
+  document.addEventListener('mouseleave', function(e){
+    if(e.clientY <= 10) showPopup();
+  });
+
+  // Mobile: botón atrás (popstate)
+  if(/Mobi|Android/i.test(navigator.userAgent)){
+    history.pushState(null, '', location.href);
+    window.addEventListener('popstate', function(){
+      showPopup();
+      history.pushState(null, '', location.href);
+    });
+  }
+
+  // Cerrar con click fuera del panel
+  document.getElementById('exit-popup').addEventListener('click', function(e){
+    if(e.target === this) closePopup();
+  });
+})();
+</script>
+
 </body>
 </html>

@@ -414,8 +414,16 @@
 
   .who-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    .who-grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   .who-card {
@@ -688,7 +696,7 @@ src="https://www.facebook.com/tr?id=1316755053598827&ev=PageView&noscript=1"/>
     <span style="font-family:'DM Sans',sans-serif; font-size:0.85rem; color:rgba(253,246,238,0.85); letter-spacing:0.5px;">⏰ <strong style="color:#e8c97a;">¡Oferta de lanzamiento!</strong> Más del 50% OFF por tiempo limitado:</span>
     <span id="countdown-timer" style="font-family:'Playfair Display',serif; font-size:1.2rem; font-weight:700; color:#f0a832; letter-spacing:2px; background:rgba(201,151,58,0.15); border:1px solid rgba(201,151,58,0.35); padding:2px 14px; border-radius:4px;">15:00</span>
   </div>
-  <a href="https://pay.hotmart.com/U104748042Q" target="_blank" style="font-family:'DM Sans',sans-serif; font-size:0.78rem; color:#e8c97a; text-decoration:underline; letter-spacing:0.5px;">→ Comprá ahora antes de que expire</a>
+  <a href="https://pay.hotmart.com/U104748042Q?checkoutMode=10" target="_blank" style="font-family:'DM Sans',sans-serif; font-size:0.78rem; color:#e8c97a; text-decoration:underline; letter-spacing:0.5px;">→ Comprá ahora antes de que expire</a>
 </div>
 
 <script>
@@ -737,7 +745,7 @@ src="https://www.facebook.com/tr?id=1316755053598827&ev=PageView&noscript=1"/>
   </div>
 
   <div class="hero-text">
-    <a href="https://pay.hotmart.com/U104748042Q" target="_blank" class="hero-badge" style="text-decoration:none; cursor:pointer;">✦ Ebook Digital</a>
+    <a href="https://pay.hotmart.com/U104748042Q?checkoutMode=10" target="_blank" class="hero-badge" style="text-decoration:none; cursor:pointer;">✦ Ebook Digital</a>
     <h1 class="hero-title">El Arte de las<br><em>Velas Artesanales</em></h1>
     <p class="hero-subtitle">Guía práctica para crear y vender velas desde cero, sin experiencia previa</p>
 
@@ -749,7 +757,7 @@ src="https://www.facebook.com/tr?id=1316755053598827&ev=PageView&noscript=1"/>
     </div>
 
     <div class="hero-cta-group">
-      <a href="https://pay.hotmart.com/U104748042Q" target="_blank" class="btn-primary">
+      <a href="https://pay.hotmart.com/U104748042Q?checkoutMode=10" target="_blank" class="btn-primary">
         QUIERO MI GUÍA AHORA &nbsp;→
       </a>
       <p style="font-family:'DM Sans',sans-serif; font-size:0.78rem; color:rgba(253,246,238,0.6); font-style:italic; margin-top:8px;">⚠️ Solo 12 cupos disponibles para el acceso de por vida</p>
@@ -1103,11 +1111,6 @@ src="https://www.facebook.com/tr?id=1316755053598827&ev=PageView&noscript=1"/>
       <p class="who-desc">Sin jefes, sin horarios fijos, trabajando en tus propios tiempos con una inversión inicial mínima.</p>
     </div>
     <div class="who-card">
-      <div class="who-icon">🎁</div>
-      <h3 class="who-title">Quieres hacer regalos únicos</h3>
-      <p class="who-desc">Aprende a crear productos que la gente ama y que no van a encontrar en ninguna tienda del mundo.</p>
-    </div>
-    <div class="who-card">
       <div class="who-icon">✨</div>
       <h3 class="who-title">Ya haces velas y quieres vender</h3>
       <p class="who-desc">Tienes el producto pero no sabes cómo monetizarlo. El capítulo 6 es exactamente lo que necesitas.</p>
@@ -1165,8 +1168,9 @@ src="https://www.facebook.com/tr?id=1316755053598827&ev=PageView&noscript=1"/>
   <p class="section-desc">Todo lo que necesitas para crear tus primeras velas y empezar a venderlas, en una guía que puedes leer esta noche.</p>
 
   <div class="price-block">
-    <span class="price-label" style="background:linear-gradient(135deg,var(--terracotta),#e08060); color:white; padding:5px 16px; border-radius:20px; letter-spacing:2px; margin-bottom:16px;">✦ OFERTA DE LANZAMIENTO ✦</span>
-    <div style="display:flex; align-items:center; gap:14px; margin-top:8px;">
+    <span class="price-label" style="background:linear-gradient(135deg,var(--terracotta),#e08060); color:white; padding:5px 16px; border-radius:20px; letter-spacing:2px; margin-bottom:12px;">✦ OFERTA DE LANZAMIENTO ✦</span>
+    <p style="font-family:'Cormorant Garamond',serif; font-size:1.25rem; font-style:italic; color:var(--brown); text-align:center; margin-bottom:16px;">Un taller de velas artesanales cuesta más de $150 USD.</p>
+    <div style="display:flex; align-items:center; gap:14px;">
       <span style="font-family:'Cormorant Garamond',serif; font-size:1.8rem; color:var(--text-light); text-decoration:line-through; opacity:0.6;">$29,99</span>
       <div class="price-amount"><span class="price-currency">$</span>12,99 <span style="font-size:1.5rem">USD</span></div>
     </div>
@@ -1180,7 +1184,7 @@ src="https://www.facebook.com/tr?id=1316755053598827&ev=PageView&noscript=1"/>
       <div class="includes-item"><span class="check">✦</span> Estrategias de venta sin publicidad paga</div>
     </div>
 
-    <a href="https://pay.hotmart.com/U104748042Q" target="_blank" class="btn-primary" style="width:100%; font-size:1.3rem;">
+    <a href="https://pay.hotmart.com/U104748042Q?checkoutMode=10" target="_blank" class="btn-primary" style="width:100%; font-size:1.3rem;">
       QUIERO MI GUÍA AHORA &nbsp;→
     </a>
     <p style="font-family:'DM Sans',sans-serif; font-size:0.82rem; color:var(--text-light); font-style:italic; margin-top:10px;">⚠️ Solo 12 cupos disponibles para el acceso de por vida</p>
@@ -1351,7 +1355,7 @@ src="https://www.facebook.com/tr?id=1316755053598827&ev=PageView&noscript=1"/>
   <span class="footer-logo">Velas Luz del Alma</span>
   <p>© 2025 Velas Luz del Alma · Todos los derechos reservados</p>
   <p style="margin-top:8px">
-    <a href="https://pay.hotmart.com/U104748042Q" target="_blank">TikTok: @velas_luzdelalma</a>
+    <a href="https://www.tiktok.com/@velas_luzdelalma?_r=1&_t=ZS-94k5F5aOctB" target="_blank">TikTok: @velas_luzdelalma</a>
   </p>
 </footer>
 
@@ -1368,7 +1372,7 @@ src="https://www.facebook.com/tr?id=1316755053598827&ev=PageView&noscript=1"/>
       <div style="display:flex; align-items:center; gap:10px; padding:6px 0; color:rgba(253,246,238,0.85); font-family:'DM Sans',sans-serif; font-size:0.9rem;"><span style="color:#c9973a;">✦</span> Solo 12 cupos disponibles</div>
       <div style="display:flex; align-items:center; gap:10px; padding:6px 0; color:rgba(253,246,238,0.85); font-family:'DM Sans',sans-serif; font-size:0.9rem;"><span style="color:#c9973a;">✦</span> Garantía de 7 días — si no te convence, te devolvemos el dinero</div>
     </div>
-    <a href="https://pay.hotmart.com/U104748042Q" target="_blank" onclick="closePopup()" style="display:inline-flex; align-items:center; justify-content:center; gap:10px; background:linear-gradient(135deg,#c9973a 0%,#e8c97a 100%); color:#2a1a0e; font-family:'DM Sans',sans-serif; font-weight:700; font-size:1.1rem; padding:18px 36px; border-radius:4px; text-decoration:none; width:100%; box-sizing:border-box; letter-spacing:0.5px;">QUIERO MI GUÍA AHORA &nbsp;→</a>
+    <a href="https://pay.hotmart.com/U104748042Q?checkoutMode=10" target="_blank" onclick="closePopup()" style="display:inline-flex; align-items:center; justify-content:center; gap:10px; background:linear-gradient(135deg,#c9973a 0%,#e8c97a 100%); color:#2a1a0e; font-family:'DM Sans',sans-serif; font-weight:700; font-size:1.1rem; padding:18px 36px; border-radius:4px; text-decoration:none; width:100%; box-sizing:border-box; letter-spacing:0.5px;">QUIERO MI GUÍA AHORA &nbsp;→</a>
     <p style="font-family:'DM Sans',sans-serif; font-size:0.75rem; color:rgba(253,246,238,0.4); margin:14px 0 0;">🔒 Pago seguro · Descarga instantánea</p>
   </div>
 </div>

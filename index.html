@@ -106,7 +106,7 @@
     text-transform: uppercase;
     padding: 6px 16px;
     border-radius: 20px;
-    margin-bottom: 1px;
+    margin-bottom: 12px;
     animation: fade-in 0.8s ease forwards;
   }
 
@@ -1429,5 +1429,41 @@ src="https://www.facebook.com/tr?id=1316755053598827&ev=PageView&noscript=1"/>
 })();
 </script>
 
+<script>
+(function() {
+  // Captura UTMs de la URL y los pasa a todos los links de Hotmart
+  function getParam(name) {
+    var url = window.location.search;
+    var regex = new RegExp('[?&]' + name + '=([^&#]*)');
+    var results = regex.exec(url);
+    return results ? decodeURIComponent(results[1]) : null;
+  }
+
+  var utmSource   = getParam('utm_source');
+  var utmMedium   = getParam('utm_medium');
+  var utmCampaign = getParam('utm_campaign');
+  var utmContent  = getParam('utm_content');
+  var src         = getParam('src');
+
+  // Solo actúa si hay al menos un parámetro
+  if (!utmSource && !utmCampaign && !src) return;
+
+  // Construye el string de parámetros
+  var params = [];
+  if (utmSource)   params.push('utm_source='   + encodeURIComponent(utmSource));
+  if (utmMedium)   params.push('utm_medium='   + encodeURIComponent(utmMedium));
+  if (utmCampaign) params.push('utm_campaign=' + encodeURIComponent(utmCampaign));
+  if (utmContent)  params.push('utm_content='  + encodeURIComponent(utmContent));
+  if (src)         params.push('src='          + encodeURIComponent(src));
+
+  var paramString = params.join('&');
+
+  // Actualiza todos los links de Hotmart
+  document.querySelectorAll('a[href*="pay.hotmart.com"]').forEach(function(link) {
+    var base = link.getAttribute('href');
+    link.setAttribute('href', base + (base.indexOf('?') > -1 ? '&' : '?') + paramString);
+  });
+})();
+</script>
 </body>
 </html>
